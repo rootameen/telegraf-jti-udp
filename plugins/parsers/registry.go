@@ -12,6 +12,7 @@ import (
 	"github.com/influxdata/telegraf/plugins/parsers/influx"
 	"github.com/influxdata/telegraf/plugins/parsers/json"
 	"github.com/influxdata/telegraf/plugins/parsers/json_v2"
+	"github.com/influxdata/telegraf/plugins/parsers/juniperUDP"
 	"github.com/influxdata/telegraf/plugins/parsers/logfmt"
 	"github.com/influxdata/telegraf/plugins/parsers/nagios"
 	"github.com/influxdata/telegraf/plugins/parsers/prometheus"
@@ -261,6 +262,8 @@ func NewParser(config *Config) (Parser, error) {
 			config.DefaultTags,
 			config.PrometheusIgnoreTimestamp,
 		)
+	case "juniperUDP":
+		parser, err = NewJuniperUDPParser()
 	case "prometheusremotewrite":
 		parser, err = NewPrometheusRemoteWriteParser(config.DefaultTags)
 	case "xml", "xpath_json", "xpath_msgpack", "xpath_protobuf":
@@ -377,6 +380,10 @@ func NewLogFmtParser(metricName string, defaultTags map[string]string) (Parser, 
 
 func NewWavefrontParser(defaultTags map[string]string) (Parser, error) {
 	return wavefront.NewWavefrontParser(defaultTags), nil
+}
+
+func NewJuniperUDPParser() (Parser, error) {
+	return &juniperUDP.JuniperUDPParser{}, nil
 }
 
 func NewFormUrlencodedParser(

@@ -16,7 +16,7 @@ require (
 	github.com/BurntSushi/toml v0.4.1
 	github.com/Mellanox/rdmamap v0.0.0-20191106181932-7c3c4763a6ee
 	github.com/Shopify/sarama v1.29.1
-	github.com/aerospike/aerospike-client-go v1.27.0
+	github.com/aerospike/aerospike-client-go v4.5.2+incompatible
 	github.com/alecthomas/units v0.0.0-20210208195552-ff826a37aa15
 	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1004
 	github.com/amir/raidman v0.0.0-20170415203553-1ccc43bfb9c9

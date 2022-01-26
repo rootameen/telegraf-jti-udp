@@ -60,7 +60,7 @@ Here's a sample config file `telegraf.conf` with the plugin enabled as an input:
  bucket = "${INFLUX_BUCKET}"
 ```
 
-More detials in the [plugin directory](https://github.com/rootameen/telegraf-jti-udp/tree/master/plugins/parsers/juniperUDP)
+More details in the [plugin directory](https://github.com/rootameen/telegraf-jti-udp/tree/master/plugins/parsers/juniperUDP)
 
 start the service:
 
@@ -70,7 +70,7 @@ start the service:
 
 ## Known Issues
 
-Currently, it appears that the parsing of ingest data is not working properly. The following list of issues is observed:
+Currently, it appears that the parsing of ingest data is not working properly. It is unknown if this state was the same in the original repo or not. The following list of issues is observed:
 
 - if multiple devices are sending data, plugin is not tagging devices as source filter properly
 - metrics received are being segmented into separate data points (i.e. Metric Name, Sequence Number, Value, Timestamp, Device are all seperate instead of being fields of the same data point)

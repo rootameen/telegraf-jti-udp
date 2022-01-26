@@ -3,8 +3,6 @@
 
 this repo is a _wip_ copy of [https://github.com/Juniper/telegraf-jti-plugins](https://github.com/Juniper/telegraf-jti-plugins), based on Telegraf 1.22
 
-
-
 ## Minimum Requirements
 
 Telegraf shares the same [minimum requirements][] as Go:
@@ -15,7 +13,6 @@ Telegraf shares the same [minimum requirements][] as Go:
 - MacOS 10.11 El Capitan or later
 
 [minimum requirements]: https://github.com/golang/go/wiki/MinimumRequirements#minimum-requirements
-
 
 ### Build From Source
 
@@ -42,12 +39,11 @@ or build for a specific OS
    env GOOS=linux GOARCH=amd64 go build -v ./cmd/telegraf
    ```
 
-
 ## Getting Started
 
 Here's a sample config file `telegraf.conf` with the plugin enabled as an input:
 
-```
+```ini
 [[inputs.socket_listener]]
 
  service_address = "tcp://:8094"
@@ -70,10 +66,10 @@ start the service:
 ./telegraf --config telegraf.conf
 ```
 
-
 ## Known Issues
 
 Currently, it appears that the parsing of ingest data is not working properly. The following list of issues is observed:
-* if multiple devices are sending data, plugin is not tagging devices as source filter properly 
-* metrics received are being segmented into separate data points (i.e. Metric Name, Sequence Number, Value, Timestamp, Device are all seperate instead of being fields of the same data point)
-   * this basically means that for interface traffic, for instance, the intefrace name and the metric value are two separate measurements, instead of being fields of the same measurement / data point
+
+- if multiple devices are sending data, plugin is not tagging devices as source filter properly 
+- metrics received are being segmented into separate data points (i.e. Metric Name, Sequence Number, Value, Timestamp, Device are all seperate instead of being fields of the same data point)
+  - this basically means that for interface traffic, for instance, the intefrace name and the metric value are two separate measurements, instead of being fields of the same measurement / data point

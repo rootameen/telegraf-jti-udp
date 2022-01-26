@@ -48,7 +48,7 @@ Here's a sample config file `telegraf.conf` with the plugin enabled as an input:
 ```ini
 [[inputs.socket_listener]]
 
- service_address = "tcp://:8094"
+ service_address = "udp://:29000"
  data_format = "juniperUDP"
 
 

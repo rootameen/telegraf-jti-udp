@@ -3,6 +3,8 @@
 
 this repo is a _wip_ copy of [https://github.com/Juniper/telegraf-jti-plugins](https://github.com/Juniper/telegraf-jti-plugins), based on Telegraf 1.22
 
+![screenshot](https://i.imgur.com/LAzrRwA.png)
+
 ## Minimum Requirements
 
 Telegraf shares the same [minimum requirements][] as Go:

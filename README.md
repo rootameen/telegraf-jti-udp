@@ -32,7 +32,7 @@ Telegraf requires Go version 1.17 or newer, the Makefile requires GNU make.
    make
    ```
 
-or build for a specific OS 
+or build for a specific OS
 
  ```shell
    cd telegraf-jti-udp
@@ -70,6 +70,6 @@ start the service:
 
 Currently, it appears that the parsing of ingest data is not working properly. The following list of issues is observed:
 
-- if multiple devices are sending data, plugin is not tagging devices as source filter properly 
+- if multiple devices are sending data, plugin is not tagging devices as source filter properly
 - metrics received are being segmented into separate data points (i.e. Metric Name, Sequence Number, Value, Timestamp, Device are all seperate instead of being fields of the same data point)
   - this basically means that for interface traffic, for instance, the intefrace name and the metric value are two separate measurements, instead of being fields of the same measurement / data point

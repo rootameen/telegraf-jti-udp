@@ -5,6 +5,8 @@ this repo is a _wip_ copy of [https://github.com/Juniper/telegraf-jti-plugins](h
 
 ![screenshot](https://i.imgur.com/LAzrRwA.png)
 
+[Blog post](https://ameen.io/en/blog/2022/06/junos-telemetry-interface-jti-ingest-using-telegraf/)
+
 ## Minimum Requirements
 
 Telegraf shares the same [minimum requirements][] as Go:
